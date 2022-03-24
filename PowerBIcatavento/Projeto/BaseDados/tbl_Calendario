@@ -1,0 +1,12 @@
+let
+
+
+    DataMin= Date.FromText("01/01/2018"),
+    DataMax= Date.FromText("31/12/2020"),
+    QtdeDias= Duration.Days(DataMax - DataMin)+1,
+    ListaData= List.Dates(DataMin, QtdeDias, #duration(1, 0, 0, 0)),
+    #"Converted to Table" = Table.FromList(ListaData, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    #"Renamed Columns" = Table.RenameColumns(#"Converted to Table",{{"Column1", "Data"}}),
+    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Data", type date}})
+in
+    #"Changed Type"

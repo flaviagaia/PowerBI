@@ -1,0 +1,7 @@
+	{
+        "name": "Bruce Color Theme",
+        "dataColors": ["#0A54A3","#B6013E", "#55911A", "#FBA901", "#C8C09E", "#E270AA"],
+        "background":"#FFFFFF",
+        "foreground": "#000000",
+        "tableAccent": "#000000"
+    }
